@@ -1,3 +1,25 @@
+% Septembre - Plan + debut recherche
+% Novembre - 20% redaction
+% Janvier - 80% redaction
+% Mars - Soutenences (20 30 minutes + equivalent Q&A) (edited)
+
+% ## Plan
+% - page de couverture
+% - résumé en français 0,5 à 1 p
+% - résumé en anglais 0,5 à 1 p
+% - mot clés (5 à 10) en fr/en
+% - sommaire : jusqu'à 3 niveaux de sous chapitres, numérotés
+% - corps
+% - avis anti-plagiat
+% - charte anti-plagiat
+% - glossaire trié ABC
+% - bibliographie / webographie
+% - annexe
+
+% ## Corps 45 - 55 pages
+% - Introduction
+% - N chapitres : recherche documentaire (l'état de l'art) + étude terrain (interview, sondage...)
+% - conclusion : un avis personnel (edited)
 \documentclass[11pt,french]{report}
 \usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
 \usepackage{graphicx} % Required for the inclusion of images
@@ -7,7 +29,7 @@
 \usepackage[utf8]{inputenc} % Required by babel
 \usepackage{babel} % Man­ages cul­tur­ally-de­ter­mined ty­po­graph­i­cal rules for a wide range of lan­guages.
 
-\title{Smart grid et consommation énergétique - Comment optimiser le monde de demain ?}
+\title{Smart grid et consommation énergétique - Comment optimiser la distribution de demain ?}
 
 \author{
   \textsc{Certin} Amelie\\
@@ -22,17 +44,19 @@
 \begin{document}
   \maketitle
 
-  \chapter{Resume}
-  This is where you tell people why they should bother reading your article.
+  % \chapter{Resume}
+  % This is where you tell people why they should bother reading your article.
 
-  \chapter{Abstract}
-  This is where you tell people why they should bother reading your article.
+  % \chapter{Abstract}
+  % This is where you tell people why they should bother reading your article.
 
-  \chapter{Mots clefs}
-  This is where you tell people why they should bother reading your article.
+  % \chapter{Mots clefs}
+  % This is where you tell people why they should bother reading your article.
 
-  \chapter{Sommaire}
-  This is where you tell people why they should bother reading your article.
+  % \chapter{Sommaire}
+  % This is where you tell people why they should bother reading your article.
 
+  \input{pre-corp/main.tex}
   \input{corp/main.tex}
+  \input{post-corp/main.tex}
 \end{document}
