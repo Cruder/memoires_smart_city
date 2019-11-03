@@ -20,7 +20,7 @@
 % - Introduction
 % - N chapitres : recherche documentaire (l'état de l'art) + étude terrain (interview, sondage...)
 % - conclusion : un avis personnel (edited)
-\documentclass[11pt,french]{report}
+\documentclass[11pt,french,a4paper,openany,twocolumn,twoside,draft]{report}
 \usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
 \usepackage{graphicx} % Required for the inclusion of images
 \usepackage{natbib} % Required to change bibliography style to APA
@@ -28,6 +28,13 @@
 \usepackage[T1]{fontenc} % Required by babel
 \usepackage[utf8]{inputenc} % Required by babel
 \usepackage{babel} % Man­ages cul­tur­ally-de­ter­mined ty­po­graph­i­cal rules for a wide range of lan­guages.
+\usepackage{blindtext}
+\usepackage{lipsum}
+\usepackage[colorlinks]{hyperref}
+\usepackage[a4paper]{geometry}
+
+
+\renewcommand{\baselinestretch}{1.5}
 
 \title{Smart grid et consommation énergétique - Comment optimiser la distribution de demain ?}
 
@@ -38,11 +45,14 @@
   \textsc{Lairan} Alexandre\\
   \texttt{alexandrelairan@gmail.com}
 }
+% Add some photo
 
 \date{\today}
 
 \begin{document}
   \maketitle
+
+  \tableofcontents
 
   % \chapter{Resume}
   % This is where you tell people why they should bother reading your article.
