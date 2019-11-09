@@ -20,11 +20,12 @@
 % - Introduction
 % - N chapitres : recherche documentaire (l'état de l'art) + étude terrain (interview, sondage...)
 % - conclusion : un avis personnel (edited)
-\documentclass[11pt,french,a4paper,openany,twocolumn,twoside,draft]{report}
+\documentclass[12pt,french,a4paper,openany,twoside]{report}
 \usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
 \usepackage{graphicx} % Required for the inclusion of images
 \usepackage{natbib} % Required to change bibliography style to APA
 \usepackage{amsmath} % Required for some math elements
+\usepackage{lmodern}
 \usepackage[T1]{fontenc} % Required by babel
 \usepackage[utf8]{inputenc} % Required by babel
 \usepackage{babel} % Man­ages cul­tur­ally-de­ter­mined ty­po­graph­i­cal rules for a wide range of lan­guages.
@@ -32,14 +33,16 @@
 \usepackage{lipsum}
 \usepackage[colorlinks]{hyperref}
 \usepackage[a4paper]{geometry}
+\usepackage{textcomp}
 
 
 \renewcommand{\baselinestretch}{1.5}
+\hbadness=10000
 
 \title{Smart grid et consommation énergétique - Comment optimiser la distribution de demain ?}
 
 \author{
-  \textsc{Certin} Amelie\\
+  \textsc{Certin} Amélie\\
   \texttt{amelie.certin@gmail.com}
   \and
   \textsc{Lairan} Alexandre\\
