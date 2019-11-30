@@ -156,8 +156,38 @@ Par la suite, Stafford Beer continua ses recherches sur la Théorie des système
 % avec 1 seul
 
 \section{Protocoles et Open Data}
+
+La réalisation de projet en lien avec la ville connecté nécessite l'utilisation d'un grand nombre de données.
+De nombreuses villes se sont mis à l'Open Data pour les fournir et ainsi booster les évolutions de la ville.
+C'est le cas de la Métropole Européenne de Lille qui possède a ce jour 298 jeux de donnée à la disposition de tous.
+
+Place de parking en temps réel, infrastructures de la ville, lignes de bus, accroche vélo, ... de nombreuses
+données sont partagé grace a cette unique plateforme qui permet aux applications tel que City Mapper
+d'informer les utilisateurs sur l'état de la ville.
+Le principal moyen d'obtenir ces données est une API répondant au format JSON, mais il est aussi possible de les
+télécharger au format CSV pour les consommer en local.
+
+Les API REST possèdent un problème de taille, il n'est pas possible de spécifier plus de
+2,048 caractères dans une URL, ce qui limite l'expressivité et donc la pertinence de certaines recherche,
+de plus chaque requêtes fera un appel sur le réseau, ce qui n'est pas éco-responsable.
+La consommation d'un CSV en local résous les 2 solutions mais perd l'intérêt du changement des données en temps
+réel.
+Quelques protocoles proposent un compromis entre ces 2 approches.
+L'Open Data protocole met un serveur de mise a jours entre le consommateur et la base de donnée,
+lorsque qu'un consommateur se connecte au serveur, il vas télécharger les changements du scope relatif aux données
+recherché, et seulement lorsque ces données sont mises a jours, le serveur vas indiquer au consommateur
+ce changement.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.19]{media/open_data_protocol.png}
+  \caption{Architecture du projet CyberSyn}
+\end{figure}
+
+
 % Communication entre services différents (voiture - infrastructure - éclairage - chauffage)
 % Centralisation TaaS (Pilot Things)
+
 \section{Gestion des catastrophes}
 % Panne électrique par exemple
 \section{Optimisation de la distribution énergétique}
