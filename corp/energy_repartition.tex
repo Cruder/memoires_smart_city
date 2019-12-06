@@ -21,7 +21,7 @@ Le Diborure de magnésium $MgB_2$ est un des matériaux ayant la plus haute temp
 Aujourd'hui, la majorité des câbles électriques mondiaux sont en cuivre ou en aluminium, on va s'intéresser plus particulièrement au cuivre qui possède le meilleur rendement.
 
 Pour calculer la perte d'énergie dans un câble en cuivre, on peut utiliser la formule $Loss = I^2\times R$ avec $I$ pour l'intensité, exprimée en ampère, et $R$ en Ohm.
-On peut exprimer les Ohms avec la formule suivante : $R = \frac{V}{I}$
+On peut exprimer les Ohms avec la formule suivante : $R = \frac{V}{I}$ avec V pour le voltage.
 
 La formule étendue devient donc
 
@@ -34,16 +34,24 @@ La formule étendue devient donc
 
 En france, on utilise la norme \texttt{NF\_C18-510} pour classer les lignes électriques
 
-\begin{table}[]
+\begin{table}[h]
   \begin{tabular}{lll}
-  Tension    & Courent Alternatif     \\
-  Très basse & $U_n \leq 50V$         \\
-  Basse      & $50V < U_n \leq 1kV$   \\
-  Haute      & $1kV < U_n \leq 50kV$  \\
-  Très Haute & $U_n > 50kV$
-\end{tabular}
+    Tension    & Courent Alternatif     \\
+    Très basse & $U_n \leq 50V$         \\
+    Basse      & $50V < U_n \leq 1kV$   \\
+    Haute      & $1kV < U_n \leq 50kV$  \\
+    Très Haute & $U_n > 50kV$
+  \end{tabular}
 \end{table}
 
+% Comparons les différentes tensions pour une puissance donnée pour en obtenir.
 
-Comparons les différentes tensions pour une puissance donnée.
+Prenons plusieurs tensions pour une puissance donnée sur un cable d'1km de long.
+
+Ces données vont nous donner :
+\begin{itemize}
+  \item Le diamètre du cable
+  \item Le voltage perdu
+  \item La chaleur généré
+\end{itemize}
 
