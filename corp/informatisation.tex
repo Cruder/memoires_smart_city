@@ -173,6 +173,7 @@ de plus chaque requêtes fera un appel sur le réseau, ce qui n'est pas éco-res
 La consommation d'un CSV en local résous les 2 solutions mais perd l'intérêt du changement des données en temps
 réel.
 Quelques protocoles proposent un compromis entre ces 2 approches.
+
 L'Open Data protocole met un serveur de mise a jours entre le consommateur et la base de donnée,
 lorsque qu'un consommateur se connecte au serveur, il vas télécharger les changements du scope relatif aux données
 recherché, et seulement lorsque ces données sont mises a jours, le serveur vas indiquer au consommateur
@@ -181,8 +182,9 @@ ce changement.
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.19]{media/open_data_protocol.png}
-  \caption{Architecture du projet CyberSyn}
+  \caption{Architecture Open Data Protocole}
 \end{figure}
+
 
 
 % Communication entre services différents (voiture - infrastructure - éclairage - chauffage)
@@ -191,4 +193,134 @@ ce changement.
 \section{Gestion des catastrophes}
 % Panne électrique par exemple
 \section{Optimisation de la distribution énergétique}
-\section{Cas d'étude d'une bourse de l'energie}
+
+Toute zone géographique ne consomme ni ne produit l'énergie de la même manière.
+Une ville comme Paris consommera bien plus d'énergie la nuit comparé a une ville tel de Dijon.
+De ce fait, chaque système de distribution ne produira pas aux mêmes heures.
+
+Des algorithmes pourrons dorénavant modifier la disposition du maillage énergétique dans l'optique
+de réduire les pertes lié a la saturation du réseau. Plus encore, la smart grid se permettra de contrôler
+du mobilier urbain énergivore pour toujours avoir une offre et une demande optimale.
+
+Pour exemple, supposons qu'un orage violent soit attendu dans une ville a énergie verte.
+La ville choisira de réduire les quantités d'énergie disponibles pour le consommateur sur les bornes
+de charge de voitures électriques.
+L'économie réalisée sera stockée en vue d'une sauvegarde du système électrique de la ville durant les péripéties.
+En effet, l'orage signifie vent fort et obscurcissement du ciel, ces deux facteurs jouent sur la production
+éolien et solaire car une éolienne ne peux produire en cas de fort vent sans risquer d'être détruite, et le solaire
+captera moins de photons du soleil.
+
+La connaissance de l'usure du matériel est importante pour la fiabilité des prédictions de production.
+L'usure des unités de productions d'énergie est détecté grace à la différence entre l'énergie attendue
+(noté $E_a$) et l'énergie produite (noté $E_p$), différence que nous nommerons delta (noté $\Delta$).
+La formule $\Delta = E_a - E_p$ nous donne ce delta à un moment donné.
+Si le delta tend vers $E_a$, alors l'unité se dégrade. Sous un seuil défini par l'opérateur,
+l'unité doit être remplacée.
+
+Toute cette optimisation peut être résumé en une fonction de réduction des coût $min f(cost)$ qui est trop difficile
+à résoudre en temps réel. Des algorithmes de recherches opérationnelle en ferons une estimation fidèle
+pour profiter de gains maximum.
+
+\begin{equation}
+  min f(cost) = \sum^{T}_{t = 1}\big{
+    [(P_{Grid}(t) \times dt) \times C_{Grid}(t)] +
+    [(P_PV)]
+  }
+\end{equation}
+
+\section{Cas d'étude théorique d'une bourse de l'énergie}
+
+Prenons le cas d'une ville en 2025 équipée d'une Smart Grid.
+Cette ville possède 150 000 habitants, avec une majorité de classe moyenne.
+La ville est connectée à toutes les villes des alentours par un réseau routier, ferroviaire
+électrique et électronique.
+
+Les habitants de la ville travaillent majoritairement dans celle-ci.
+Nous comptons un flux entrant de 60 000 personnes et un flux sortant de 40 000 habitants chaque jour
+de la semaine.
+
+La journée du 12 mai 2025 commence et il est minuit, la plupart des habitants dorment, mais
+la ville est en pleine prise de décisions.
+Des milliers de voitures électriques sont en train de se charger à un prix défiant toute concurrence.
+Nous sommes au début des heures creuses et la plupart des véhicules sont déjà à 70\% de charge.
+
+Plusieurs industries énergivores se mettent en route dés maintenant pour profiter de ces heures creuses.
+Les stations de stockage à hydrogène font le plein de batterie.
+
+Le vent est favorable ce jours-là, les éoliennes sont à un rendement de 83\% toute la nuit,
+favorisant davantage le faible prix de l'énergie.
+
+Il est 4 heure du matin. La grande majorité des voitures électriques sont chargées au-delà de 90\% de leur capacité.
+Du fait de l'abondance d'énergie, les STEP tournent à plein régime en recharge pour répondre aux besoins
+énergétiques des habitants durant la journée.
+Le chauffage des habitations commence à se mettre en route pour faciliter le réveil de la population.
+
+À 7 heure du matin, les habitants se lèvent et se préparent pour la journée. Le prix de l'énergie commence à monter
+fortement. Aujourd'hui, 60\% des possèsseurs de véhicules électriques l'utilisent pour se rendre sur leur lieu de travail.
+
+Jusqu'à 9 heure, la circulation est dense. De nombreux trains s'arrêtent aux gares de la ville,
+une intelligence artificielle est sollicitée pour proposer le nombre optimal
+de bus et mini-bus autonomes pour fluidifier le trafic.
+
+De 9 heure à midi, la ville tourne à plein régime. Tous les postes de travail sont occupés et consomment de l'énergie.
+Les industries capables de continuer leur activité de nuit grâce à de l'automatisation peuvent maintenant
+reprendre une activité dont l'intervention humaine est requise.
+
+Mais le temps de gâte. Un vent a soufflé durant la nuit, couvrant le ciel de nombreux nuages obscurcissant
+les rayons du soleil. Le rendement des panneaux solaire est faible, la ville doit puiser dans
+ses réserves et solliciter ses unités éoliennes.
+Les pilles à hydrogène sont les premières à distribuer leur stock dans le reste de
+la ville.
+Les particulier ayant laissé leurs véhicules électriques branchés chez eux revendent leur énergie à prix
+fort pour réduire le coût de leur facture électrique.
+
+C'est l'heure de la pause déjeuner, cette heure se ressent immédiatement dans le prix du \textbf{kWh}
+
+
+% These_MELHEM_UTBM page 65
+\begin{tabular}{ | c | c | c | c | c | c | c | }
+  \hline
+  \textbf{t} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} \\
+  \textbf{€/kWh} & 0.033 & 0.027 & 0.020 & 0.017 & 0.017 & 0.029 \\
+  \hline
+  \textbf{t} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{11} & \textbf{12} \\
+  \textbf{€/kWh} & 0.033 & 0.054 & 0.215 & 0.572 & 0.572 & 0.572 \\
+  \hline
+  \textbf{t} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} & \textbf{18} \\
+  \textbf{€/kWh} & 0.215 & 0.572 & 0.286 & 0.279 & 0.086 & 0.059 \\
+  \hline
+  \textbf{t} & \textbf{19} & \textbf{20} & \textbf{21} & \textbf{22} & \textbf{23} & \textbf{24} \\
+  \textbf{€/kWh} & 0.050 & 0.061 & 0.181 & 0.077 & 0.043 & 0.037 \\
+  \hline
+\end{tabular}
+
+\begin{tikzpicture}
+  \begin{axis}[
+    title={Variation du prix d'un kWh en fonction du temps},
+    xlabel={Heure},
+    ylabel={Prix €},
+    xmin=1, xmax=24,
+    ymin=0, ymax=0.600,
+    legend pos=outer north east
+  ]
+
+  \addplot[
+    color=blue,
+    mark=square,
+    ]
+    coordinates {
+      (1, 0.033)(2, 0.027)(3, 0.020)(4, 0.017)(5, 0.017)(6, 0.029)
+      (7, 0.033)(8, 0.054)(9, 0.572)(10, 0.572)(11, 0.572)(12, 0.572)
+      (13, 0.215)(14, 0.572)(15, 0.286)(16, 0.279)(17, 0.086)(18, 0.059)
+      (19, 0.050)(20, 0.061)(21, 0.181)(22, 0.077)(23, 0.043)(24, 0.037)
+    };
+    \legend{Journée du 12 mai 2025}
+
+  \end{axis}
+\end{tikzpicture}
+
+
+\section{Risques et vecteur d'attaques}
+
+L'informatique est le nouveau vecteur d'attaque du XXIème siècle, et le fait de le rendre primordial
+dans un secteur clef tel que l'énergie
