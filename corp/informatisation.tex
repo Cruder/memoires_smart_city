@@ -47,6 +47,28 @@ Ces données étaient ensuite utilisées pour faire des simulations des jours su
 Ces travailleurs étaient déshumanisés à tels points que tous ensemble, on les considérait comme une machine, un système d'information.
 Le comble est que pour faire fonctionner ce réseau, ils ne disposaient réellement que de quatre ordinateurs au début du projet – dont deux dédiés au développement.
 
+Pour simplifier le travail de la partie prise de décision, le projet adopte une vision récursive avec
+12 niveau d'imbrication.
+
+\begin{enumerate}
+  \item Travailleur
+  \item Équipe
+  \item Atelier
+  \item Département
+  \item Entreprise
+  \item Sous-domaine
+  \item Secteur d'industrie
+  \item Branche d'industrie
+  \item Industrie
+  \item Économie
+  \item Gouvernement
+  \item Nation
+\end{enumerate}
+
+Chacun de ces niveau abstrait et synthétise les données pour le niveau suivant.
+Cela procure une simplicité du traitement de l'information pour les niveaux élevé
+ainsi qu'un meilleur anonymat de ces données.
+
 L'un des points les plus impréssionnants est le fait d'avoir réussi un tel projet avant
 l'invention d'Internet. Ils ont mis en place un système fondé sur un protocole de communication maison nommé Telex.
 Il ne leur a fallu qu'une seul ordinateur pour le créer. Cet ordinateur était suffisamment puissant pour
@@ -178,9 +200,23 @@ mais au prix de la pertinence de l'information qui ne sera plus obtenue en temps
 Quelques protocoles proposent un compromis entre ces deux approches.
 
 L'Open Data Protocol fournit un serveur de mise a jours entre le consommateur et la base de données.
-Lorsque qu'un consommateur se connecte au serveur, il télécharge les changements du scope relatif aux données
-recherchées et seulement lorsque ces données sont mises a jours, le serveur vas indiquer au consommateur
-ce changement.
+Lorsque qu'un consommateur se connecte au serveur, il peut définir des contraintes lié a ses besoins
+pour limiter la charge des données récolté.
+
+Lorsqu'une donnée, qui correspond aux contraintes d'un consommateur, est ajouté, modifié ou supprimé,
+celui-ci en est informé par un changeset décrivant les transformations.
+Si le client n'est pas connecté au moment du changement, le changeset s'ajoute à une pille
+de changements.
+
+Lorsque le client se re-connecte, la pille de changements est réduite au minimum et envoyé
+comme simple changeset.
+
+Ce fonctionnement réduit les appels réseau, car les données sont majoritairement consulté et non modifié.
+Cette approche implique au consommateur de bien spécifier les scopes pour éviter une surcharge de donnée
+envoyé.
+
+Certains serveurs peuvent ajouter des contraintes minimum pour éviter d'envoyer toutes leurs données
+à chaque changement.
 
 \begin{figure}[h!]
   \centering
@@ -201,6 +237,12 @@ Depuis le XXIème siècle, un foyer privé d'électricité est un foyer privé d
 La multiplication des productions locales augmente la résilience du réseau de distribution d'énergie.
 Si une rupture de cable isole une ville, celle-ci possède de nombreux systèmes pour fournir
 de l'énergie aux pôles prioritaire.
+
+L'hydrogène stocké diffuse en continue l'énergie qu'elle contient, tandis que des camion citerne
+peuvent remplir les cuves.
+
+Les panneaux solaires et éoliennes produisent une énergie d'appoint pour soulager les pilles
+a combustible.
 
 Nous avons interrogé M. Alexandre Capelle sur la détection des pannes au sein de IssyGrid.
 
@@ -314,11 +356,7 @@ de celui-ci. Les robots ménagers et autres appareils domestiques s'activent tan
 
 Reprise du travail à 14 heure avec une nouvelle hausse du prix de l'énergie.
 
-<<<<<<< HEAD
-La fin du travail avec 17 heure apporte une perriode creuse, la ville reste mobilisé pour le transport, ce qui explique
-=======
 La fin de journée à 17 heure apporte une période creuse. La ville reste mobilisée pour le transport, ce qui explique
->>>>>>> ffa125ab30ad379c3d87ae6cfd1f6897afc5f8af
 un prix similaire à celui de 9 heure.
 
 La soirée est calme, les maisons se refroidissent pour la nuit. Mise à part un pic d'activité à 21 heure, expliqué par le
