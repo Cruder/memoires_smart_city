@@ -38,7 +38,7 @@
 \usepackage{float}
 \usepackage{sidecap}
 \usepackage{pgfplots}
-\usepackage[Conny]{fncychap}
+\usepackage[Bjornstrup]{fncychap}
 
 \pgfplotsset{width=10cm,compat=1.9}
 \setlength{\parskip}{1em}
@@ -47,6 +47,27 @@
 \hbadness=10000
 
 \title{Smart grid et consommation énergétique - Comment optimiser la distribution de demain ?}
+
+\usepackage{etoolbox}
+
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-40\p@}}{}{}
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-40\p@}}{}{}
+% \patchcmd{\DOTI}{\vskip 80\p@}{\vskip 0\p@}{}{}
+% \patchcmd{\DOTIS}{\vskip 80\p@}{\vskip 0\p@}{}{}
+  \renewcommand{\DOTI}[1]{%
+    \CTV\FmTi{#1}\par\nobreak
+    \vskip 10\p@
+  }
+  \renewcommand{\DOTIS}[1]{%
+    \CTV\FmTi{#1}\par\nobreak
+    \vskip -30\p@
+    \line(1,0){250}
+    \vskip -5\p@
+  }
+\makeatother
+
+
 
 \author{
   \textsc{Certin} Amélie\\
