@@ -29,7 +29,7 @@ ainsi que des ralentissements inutiles pour l'avenir du pays.
 Il décida d'inviter Stafford Beer pour s'occuper d'un tout nouveau projet d'une grande ampleur,
 le projet Cybernet pour Cybernetic Synergy.
 
-L'idée de base est simple. Obtenir en temps réel (c'est-à-dire une fois par jours pour l'époque)
+L'idée de base est simple. Obtenir en temps réel (c'est-à-dire une fois par jour pour l'époque)
 l'état économique du pays pour aider à la prise de décisions.
 Pour ce faire, chaque entité connectée au réseau devait envoyer un compte-rendu quotidien sur
 la production de celle-ci. Ce compte-rendu est envoyé au niveau supérieur et est mis en commun
@@ -71,7 +71,7 @@ ainsi qu'un meilleur anonymat de ces données.
 
 L'un des points les plus impréssionnants est le fait d'avoir réussi un tel projet avant
 l'invention d'Internet. Ils ont mis en place un système fondé sur un protocole de communication maison nommé Telex.
-Il ne leur a fallu qu'une seul ordinateur pour le créer. Cet ordinateur était suffisamment puissant pour
+Il ne leur a fallu qu'un seul ordinateur pour le créer. Cet ordinateur était suffisamment puissant pour
 simuler un réseau d'un millier d'ordinateurs, zone de test du protocole.
 
 Le projet prit fin en 1973 avec la chute du gouvernement de Salvador Allende.
@@ -225,7 +225,7 @@ Pour finir, le Z-Wave est un protocole spécialement conçu pour la smart home.
 Il peux couvrir une distance de 30 mètres grâce a sa fréquence de 908 MHz.
 Le Z-Wave ne nécessite pas de coordinateur, contrairement au Wi-Fi qui utilise
 un routeur, mais un principe de maître et d'esclave pour transporter l'information.
-Le débit vas de 9.6 Kbps à 40 Kbps.
+Le débit va de 9.6 Kbps à 40 Kbps.
 
 Ces protocoles fonctionnent tous de la même façon. Ils fontla communication entre un objet que l'on appellera capteur, et un
 serveur.
@@ -248,21 +248,21 @@ Quelques protocoles proposent un compromis entre ces deux approches.
 
 \subsection{Protocole serveur - Open Data Protocol}
 
-L'Open Data Protocol fournit un serveur de mise a jours entre le consommateur et la base de données.
-Lorsque qu'un consommateur se connecte au serveur, il peut définir des contraintes lié a ses besoins
-pour limiter la charge des données récolté.
+L'Open Data Protocol fournit un serveur de mises à jour entre le consommateur et la base de données.
+Lorsque qu'un consommateur se connecte au serveur, il peut définir des contraintes liées a ses besoins
+pour limiter la charge des données récoltées.
 
-Lorsqu'une donnée, qui correspond aux contraintes d'un consommateur, est ajouté, modifié ou supprimé,
+Lorsqu'une donnée, qui correspond aux contraintes d'un consommateur, est ajoutée, modifiée ou supprimée,
 celui-ci en est informé par un changeset décrivant les transformations.
-Si le client n'est pas connecté au moment du changement, le changeset s'ajoute à une pille
+Si le client n'est pas connecté au moment du changement, le changeset s'ajoute à une pile
 de changements.
 
-Lorsque le client se re-connecte, la pille de changements est réduite au minimum et envoyé
+Lorsque le client se connecte de nouveau, la pile de changements est réduite au minimum et envoyée
 comme simple changeset.
 
-Ce fonctionnement réduit les appels réseau, car les données sont majoritairement consulté et non modifié.
-Cette approche implique au consommateur de bien spécifier les scopes pour éviter une surcharge de donnée
-envoyé.
+Ce fonctionnement réduit les appels réseau, car les données sont majoritairement consultées et non modifiées.
+Cette approche implique au consommateur de bien spécifier les scopes pour éviter une surcharge de données
+envoyées.
 
 Certains serveurs peuvent ajouter des contraintes minimums pour éviter d'envoyer toutes leurs données
 à chaque changement.
@@ -308,22 +308,22 @@ Des algorithmes pourront dorénavant modifier la disposition du maillage énerg�
 de réduire les pertes liées à la saturation du réseau. Plus encore, la smart grid se permettra de contrôler
 du mobilier urbain énergivore pour toujours avoir une offre et une demande optimale.
 
-Pa exemple, supposons qu'un orage violent soit attendu dans une ville à énergie verte.
+Par exemple, supposons qu'un orage violent soit attendu dans une ville à énergie verte.
 La ville choisira de réduire les quantités d'énergie disponibles pour le consommateur sur les bornes
 de charge de voitures électriques.
 L'économie réalisée sera stockée en vue d'une sauvegarde du système électrique de la ville durant les péripéties.
 En effet, l'orage signifie vent fort et obscurcissement du ciel. Ces deux facteurs jouent sur la production
-éolien et solaire car une éolienne ne peux produire en cas de fort vent sans risquer d'être détruite, et le solaire
+éolienne et solaire car une éolienne ne peux produire en cas de fort vent sans risquer d'être détruite, et le solaire
 captera moins de photons du soleil.
 
 La connaissance de l'usure du matériel est importante pour la fiabilité des prédictions de production.
-L'usure des unités de productions d'énergie est détecté grace à la différence entre l'énergie attendue
+L'usure des unités de productions d'énergie est détectée grace à la différence entre l'énergie attendue
 (noté $E_a$) et l'énergie produite (noté $E_p$), différence que nous nommerons delta (noté $\Delta$).
 La formule $\Delta = E_a - E_p$ nous donne ce delta à un moment donné.
 Si le delta tend vers $E_a$, alors l'unité se dégrade. Sous un seuil défini par l'opérateur,
 l'unité doit être remplacée.
 
-Toute cette optimisation peut être résumée en une fonction de réduction des coût $min f(cost)$ qui est trop difficile
+Toute cette optimisation peut être résumée en une fonction de réduction des coûts $min f(cost)$ qui est trop difficile
 à résoudre en temps réel. Des algorithmes de recherche opérationnelle en feront une estimation fidèle
 pour profiter de gains maximum.
 
@@ -381,7 +381,7 @@ Du fait de l'abondance d'énergie, les STEP tournent à plein régime en recharg
 Le chauffage des habitations commence à se mettre en route pour faciliter le réveil de la population.
 
 À 7 heure du matin, les habitants se lèvent et se préparent pour la journée. Le prix de l'énergie commence à monter
-fortement. Aujourd'hui, 60\% des possèsseurs de véhicules électriques l'utilisent pour se rendre sur leur lieu de travail.
+fortement. Aujourd'hui, 60\% des propriétaires de véhicules électriques l'utilisent pour se rendre sur leur lieu de travail.
 
 Jusqu'à 9 heure, la circulation est dense. De nombreux trains s'arrêtent aux gares de la ville,
 une intelligence artificielle est sollicitée pour proposer le nombre optimal
@@ -392,9 +392,9 @@ Les industries capables de continuer leur activité de nuit grâce à de l'autom
 reprendre une activité dont l'intervention humaine est requise.
 
 Mais le temps se gâte. Un vent a soufflé durant la nuit, couvrant le ciel de nombreux nuages obscurcissant
-les rayons du soleil. Le rendement des panneaux solaire est faible, la ville doit puiser dans
+les rayons du soleil. Le rendement des panneaux solaires est faible, la ville doit puiser dans
 ses réserves et solliciter ses unités éoliennes.
-Les pilles à hydrogène sont les premières à distribuer leur stock dans le reste de la ville.
+Les piles à hydrogène sont les premières à distribuer leur stock dans le reste de la ville.
 Les particuliers ayant laissé leurs véhicules électriques branchés et s'en servant comme batterie chez eux revendent
 leur énergie à prix fort pour réduire le coût de leur facture électrique.
 
