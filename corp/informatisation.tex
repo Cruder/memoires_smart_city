@@ -182,7 +182,7 @@ Par la suite, Stafford Beer continua ses recherches sur la Théorie des système
 
 \section{Protocoles et Open Data}
 
-La réalisation de projet en lien avec la ville connectée nécessite l'utilisation d'un grand nombre de données.
+La réalisation de projets en lien avec la ville connectée nécessite l'utilisation d'un grand nombre de données.
 De nombreuses villes se sont mises à l'Open Data pour les fournir et ainsi booster les évolutions de la ville.
 C'est le cas de la Métropole Européenne de Lille qui possède à ce jour 298 jeux de données mis à la disposition de tous.
 
@@ -194,43 +194,45 @@ d'informer les utilisateurs sur l'état de la ville.
 Le principal moyen d'obtenir ces données est une API répondant au format JSON, mais il est aussi possible de les
 télécharger au format CSV pour les consommer en local.
 
-Ces données doivent être collecté et envoyer sur des serveurs qui les distribuerons à des entreprises de service,
-malheureusement, il n'existe pas une norme unique pour les objets connecté.
+Ces données doivent être collectées et envoyées sur des serveurs qui les distribueront à des entreprises de service.
+Il n'existe malheureusement pas une norme unique pour les objets connectés.
 
 \subsection{Les protocoles objet}
 
-Il existe quatres grandes normes de communication aujourd'hui lorsque l'on parle d'objets connecté.
+Il existe quatre grandes normes de communication sans fils aujourd'hui lorsque l'on parle d'objets connectés.
 
 Zigbee est basé sur le standard IEEE 802.15.4.
-C'est un protocole efficace qui consomme peu d'énergies, mais qui possède une courte porté.
-Ses longueurs d'ondes sont des les fréquences utilisé par l'ISM pour Industrie, Scientifique et Médicale.
-Elles ont une fréquence de 2.4 GHz, 868 MHz et 928 MHz ont une possibilité de communication en duplex.
+C'est un protocole efficace qui consomme peu d'énergie, mais qui possède une courte portée.
+Ses longueurs d'ondes sont dans les fréquences utilisées par l'ISM - Industrie, Scientifique et Médicale.
+Elles ont une fréquence de 2.4 GHz, 868 MHz et 928 MHz et ont une possibilité de communication en duplex
+- capable d'intercepter et communiquer en même temps.
+
 
 Le Bluetooth est un moyen de communication sans fil à courte distance basé sur le standard
 IEEE 802.15.1.
 Il utilise de courtes longueurs d'ondes entre 2400 MHz et 2480 MHz.
 Ses avantages sont une faible consommation énergétique ainsi qu'une grande disponibilité.
 
-Le Wi-Fi est aujourd'hui la norme la plus largement utilisé et implanté dans le monde.
-Basé sur le standard IEEE 802.11, il couvre une large part des bandes réseaux pour des
+Le Wi-Fi est aujourd'hui la norme la plus largement utilisée et implantée dans le monde.
+Basée sur le standard IEEE 802.11, il couvre une large part des bandes réseaux pour des
 besoins différents.
-Le Wi-Fi IEEE 802.11b couvre les bandes 2.4 GHz avec un débit de donnée allant jusqu'a 11 Mbps.
+Le Wi-Fi IEEE 802.11b couvre les bandes 2.4 GHz avec un débit de données allant jusqu'a 11 Mbps.
 Le Wi-Fi IEEE 802.11a quand à lui couvre les bandes de 5.8 GHz et à un débit de 150 Mbps.
 Ce moyen de communication est chiffré de bout en bout avec un protocole AES.
 Ses avantages sont sa popularité, sa vitesse, un support du protocole IP et une bonne monté en charge.
 
 Pour finir, le Z-Wave est un protocole spécialement conçu pour la smart home.
-Il peux couvrir une distance de 30 mètres grace a sa fréquence de 908 MHz.
+Il peux couvrir une distance de 30 mètres grâce a sa fréquence de 908 MHz.
 Le Z-Wave ne nécessite pas de coordinateur, contrairement au Wi-Fi qui utilise
 un routeur, mais un principe de maître et d'esclave pour transporter l'information.
 Le débit vas de 9.6 Kbps à 40 Kbps.
 
-Ces protocoles répondent tous au même besoin, communiquer entre un objet que l'on appellera capteur, et un
+Ces protocoles fonctionnent tous de la même façon. Ils fontla communication entre un objet que l'on appellera capteur, et un
 serveur.
 
-Si l'on prend l'exemple d'un parking, celui-ci peux avoir un capteur par place disponible pour indiquer
+Si l'on prend l'exemple d'un parking, celui-ci peut avoir un capteur par place disponible pour indiquer
 les places libres ou non.
-Ces capteurs devrons communiquer les informations à un serveur qui fournira l'information
+Ces capteurs devront communiquer les informations à un serveur qui fournira l'information
 aux usager.
 
 Ce serveur transmettra l'information dans un format spécifique.
