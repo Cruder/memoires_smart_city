@@ -252,7 +252,7 @@ L'Open Data Protocol fournit un serveur de mises à jour entre le consommateur e
 Lorsque qu'un consommateur se connecte au serveur, il peut définir des contraintes liées a ses besoins
 pour limiter la charge des données récoltées.
 
-Lorsqu'une donnée, qui correspond aux contraintes d'un consommateur, est ajoutée, modifiée ou supprimée,
+Le schéma A2 (annexe) nous montre que lorsqu'une donnée, qui correspond aux contraintes d'un consommateur, est ajoutée, modifiée ou supprimée,
 celui-ci en est informé par un changeset décrivant les transformations.
 Si le client n'est pas connecté au moment du changement, le changeset s'ajoute à une pile
 de changements.
@@ -266,13 +266,6 @@ envoyées.
 
 Certains serveurs peuvent ajouter des contraintes minimums pour éviter d'envoyer toutes leurs données
 à chaque changement.
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.19]{media/open_data_protocol.png}
-  \caption{Architecture Open Data Protocole}
-\end{figure}
-
 
 
 % Communication entre services différents (voiture - infrastructure - éclairage - chauffage)
