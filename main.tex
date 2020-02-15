@@ -41,6 +41,7 @@
 \usepackage{pgfplots}
 \usepackage[Bjornstrup]{fncychap}
 \usepackage{xurl}
+\usepackage{titling}
 
 \pgfplotsset{width=10cm,compat=1.9}
 \setlength{\parskip}{1em}
@@ -48,7 +49,7 @@
 \renewcommand{\baselinestretch}{1.5}
 \hbadness=10000
 
-\title{Smart grid et consommation énergétique - Comment optimiser la distribution de demain ?}
+\title{\textbf{Smart grid et consommation énergétique} \\ Comment optimiser la distribution de demain ?}
 
 \usepackage{etoolbox}
 
@@ -87,6 +88,36 @@
 \date{\today}
 
 \begin{document}
+  \begin{titlepage}
+    \centering
+    \vskip -10cm
+    \includegraphics[width=0.8\textwidth]{media/header_main.jpg}\par\vspace{0.1cm}
+    {\scshape\LARGE Mémoire de fin d’études \par}
+    {\LARGE Smart grid et consommation énergétique \par}
+    {\Large Comment optimiser la distribution de demain ? \par}
+
+    \vfill
+
+    \raggedright
+    \textsc{Certin} Amélie
+    \texttt{Architecture Logicielle}
+
+    \textsc{Lairan} Alexandre
+    \texttt{Architecture Logicielle}
+
+    Maître de Mémoire : Carina Roels
+
+    Date de soutenance : 10 mars 2020
+
+    \vfill
+
+    \begin{center}
+      \includegraphics[scale=0.14]{media/esgi_logo.jpg}
+      \LARGE \textbf{5ESGI 2019/2020}
+      \includegraphics[scale=0.22]{media/logo_ges.png}
+    \end{center}
+  \end{titlepage}
+
   \maketitle
   \tableofcontents
   \input{pre-corp/main.tex}
