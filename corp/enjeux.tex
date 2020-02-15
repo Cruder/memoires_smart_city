@@ -2,17 +2,17 @@
 
 Pour aller vers l'optimisation de l'énergie, il nous faut prendre en compte sa création,
 son transport, son stockage et sa consommation.
-Le concept de Smart Grid permet d'apporter des éléments pour répondre à ces problématiques.
+Le concept de Smart Grid permet d'apporter des éléments pour répondre à chacune de ces problématiques.
 
 \section{Descriptif de la smart grid}
 La smart grid est l'union de deux expertises, l'informatique et l'énergie.
 Ce type de réseau permet l'échange d'informations sur l'état de la structure.
 Ces connaissances sont importantes pour pouvoir optimiser la distribution, faire du stockage
-ainsi que minimiser l'impact écologique de l'Homme.
+et donc minimiser l'impact écologique de l'Homme.
 
 L'un des intérêts de ce partage d'information est de pouvoir décentraliser la production d'énergie.
 Tout point du réseau peut donc produire ou consommer son énergie.
-Cette complexité supplémentaire nécessite de nombreux ajustements et changements de paradigme.
+Cette complexité supplémentaire nécessite de nombreux ajustements et changements de paradigme en terme de topologie.
 L'un de ces changements est le coût de l'énergie. Celle-ci varie déjà aujourd’hui, mais cette variation
 devrait être d'autant plus importante que les énergies renouvelables prendront une place forte dans
 le mix énergétique citadin. Une solution serait que chaque ville possède une bourse de l'énergie
@@ -198,18 +198,34 @@ Les modèles de croissance urbaine ont été largement façonnés par les forces
 ont manqué une occasion d'aligner le développement urbain sur la capacité des transports en commun.
 
 \section{Étude de cas - IssyGrid}
-Le projet IssyGrid® mis en place en 2012 par Bouygues Immobilier dans la ville d'Issy-les-Moulineaux,
-commune française dans le département des Hauts-de-Seine. Le projet a été fortement encouragé par le
-maire de la commune, André Santini. Mais aucun soutien d'ordre financier.
+Le projet IssyGrid est un bon exemple de SmartGrid implantée en France.
+Nous avons pris contact avec M. Alexandre CAPELLE, Directeur des Solutions Logicielles chez Embix pour
+lui poser quelques questions sur le projet.
+Ses réponses viennent compléter nos recherches sur le projet, tandis que son interview complète peut être
+trouvée en annexe.
+M. Eric LEGALE, directeur d’IssyMedia et chargé de la communication de la ville,
+nous a également fourni quelques éléments de réponse sur les aspects sociales du projet.
 
-``La ville n’a pas mis un euro'' --  Éric Legale, directeur d’IssyMedia, chargé de la communication et
+\subsection{Présentation du projet}
+Initié par Bouygues Immobilier, le projet a vue le jour en 2012 dans la ville d'Issy-les-Moulineaux,
+commune française dans le département des Hauts-de-Seine.
+Le projet fut bien accueilli et encouragé par le maire de la ville, André SANTINI.
+En revanche, aucune aide financière ne fut apporté par la commune.
+
+``Le projet a été financé exclusivement par le consortium, sans apport de la ville''
+--  Éric LEGALE, directeur d’IssyMedia, chargé de la communication et
 de l’innovation de la ville.
 
 Le projet n'a pas impliqué qu'un seul acteur, mais un consortium de dix compagnies :
 Bouygues Energies \& Services, Bouygues Immobilier, General Electric, EDF, ENEDIS, Microsoft,
 Objenious, Schneider Electric, Sopra Steria et Total.
 
-L'expérience a duré 8 ans, de 2012 à 2018, et a un impact sur la vie de 5.000 habitants, 10.000 employés
+Ce sont eux qui ont financé le projet.
+Pour joindre le consortium, un apport d'une valeur de 250 000€ était nécessaire.
+Ce budget a permis ensuite de financer les recherches et les coûts matériels d'autres entreprises partenaires telles que Embix.
+IssyGrid fut un terrain d'expérimentation.
+
+L'expérience a duré 8 ans, et a un impact sur la vie de 5.000 habitants, 10.000 employés
 et 160.000 m2 de bureaux sur deux quartiers de la ville, Bords-de-Seine (quartier des affaires),
 puis Fort en 2015.
 
@@ -225,42 +241,87 @@ puis Fort en 2015.
   \end{figure}
 
 
-Le projet a fait face à plusieurs types de défis. Tout d'abord des défis techniques.
+Le projet a fait face à plusieurs types de défis.
 
-Les habitations concernées ont été équipées d'un Linky, un compteur électrique conçu par EDF
-plus intelligent que les anciens. Il est capable de suivre et de communiquer la consommation en
-électricité tout comme son cousin Gazpar pour la consommation de gaz. La création de ces appareils répond
-à une directive européenne, mais ils ont utiliser les Eco-quartiers comme terrain de test.
-Total a également fait des progrès sur le raccordement des panneaux photovoltaïques.
+\subsection{La collecte de données}
+Tout d'abord un défi quant à la collecte des données des différentes infrastructures.
+Les informations de consommation d'énergie et de déplacements sont essentielles pour que la ville
+puisse s'adapter à sa population.
+
+L'entreprise Embix a été créée en 2011 par Bouygues Immobilier, Bouygues Energie et Service, et General Électric,
+à l'occasion du projet en réflexion. Sa mission fut de répondre
+à cette problématique en instrumentant la ville de capteurs
+capables de récolter des informations telles que la température, la consommation de chauffage, d'électricité,
+la qualité de l'air\dots
+
+Tout d'abord sur les bâtiments du tertiaire.
+Les capteurs ne sont pas directement connéctés à Internet, mais sont capables de communiquer entre eux
+via un réseau filaire et des protocoles tels que Modbus et BACnet.
+Ces données sont traités par un outils GPB - Google Protocol Buffers - qui permet de traduire des données
+issus de divers formats de communication. Elles sont rendue publiques sur Internet par la GPB.
+
+Ensuite sur les bâtiments résidentiels. Pour chaque logement, les capteurs sont reliés en filaire à un compteur
+qui lui est connecté à Internet.
+Le projet est parvenu à un accord sans précédent avec la CNIL :
+la collecte des données est autorisée par lot de dix habitations afin de conserver son anonymat et garantir
+la confidentialité particulière d'un logement.
+D'autant plus que la ville a choisi de faire de l'Open Data.
+Chaque foyer doit toutefois donner son accord pour que ses données alimente le flux.
+
+Les compteurs Linky, dont sont équipés les logements récents, permettent de communiquer les informations
+de consommation d'éléctricité auprès de ENEDIS.
+Les données journalières récoltées par leur serveurs sont donc stockées sur leurs serveurs.
+La création de ces appareils répond à une directive européenne,
+mais ils ont utilisé les Eco-quartiers comme terrains de test.
+Il existe l'équivalent du compteur Linky pour la consommation de gaz : son cousin Gazpar.
+
+Il existe un dernier type de réseau sur les bâtiments de la ville.
+Il y a par exemple un objet connecté branché sur le compteur de la gare RER capable de
+communiquer les données via le réseau longue portée LoRa qui couvre déjà le territoire français.
+Il n'y a donc pas besoin câbles, ces objets connectés réutilisent un réseau d'ondes radio déjà mis en place par Bouygues Télécom.
+
+
+\subsection{Un défi technique}
+
+La collecte de données fut un défi technique à part entière.
+Tous les capteurs de la villes communiquent en effet via des protocoles de communication différents.
+Pour qu'Embix puisse créer un centre d'analyse et d'optimisation, ils ont dû apprendre
+à communiquer avec une quinzaine de protocoles différents puisqu'il n'existait aucune standardisation.
+
+Mais ce projet de R\&D a aussi permis de faire plein d'innovations.
+
+Total a par exemple fait des progrès sur le raccordement des panneaux photovoltaïques.
 L'énergie créée en trop lors des heures creuses est stockée dans des volants d'inertie et dans des
-batteries. un accord a été passé avec Renault pour récupérer leurs anciennes batteries de voitures
+batteries. Un accord a été passé avec Renault pour récupérer leurs anciennes batteries de voitures
 électriques, démontrées comme suffisantes pour les quartiers Isséens.
-Bouygues Energies \& Services a également travaillé sur l'éclairage urbain pour que les réverbères
+
+Dans une des tours du quartier des affaires, il a fallut répondre à un problématique de climatisation
+dont la consommation était très importante en été.
+Un nouveau système de "pile à froid" a été imaginé.
+La nuit, durant les heures creuses, l'éléctricité est sollicitée pour créer un grand bloc de glace.
+En journée, plutôt que de faire tourner la climatisation à plein régime, on fait
+fondre ce bloc de glace pour recréer de l'électricité.
+
+D'autres éléments déjà largement utilisés dans les villes ont aussi été mis en place dans IssyGrid.
+Bouygues Energies \& Services a par exemple travaillé sur l'éclairage urbain pour que les réverbères
 consomment moins d'énergie et lutter contre la pollution lumineuse. Ils sont capables d'adapter
 leur éclairage en fonction de l'heure et des présences à proximité.
-Les données transitent dans toute la Smart Grid au travers d'un réseau développé par Embix, une
-start-up créée par Bouygues. Ils ont livré le centre d'analyse et d'optimisation de l'ensemble des
-flux énergétique, capable de communiquer avec tous les instruments de mesure du quartier, avec autant de
-protocoles différents.
 
-Mais aussi un défi concernant la récolte et l'utilisation des données utilisateurs.
-
-Les informations de consommation d'énergie et de déplacements sont essentielles pour que la ville
-puisse s'adapter à sa population. Le projet est parvenu à un accord sans précédent avec la CNIL :
-la collecte des données est autorisée par lot de dix habitations afin de la garder anonyme, garantir
-la confidentialité particulière d'un logement.
-D'autant plus que la ville a choisi de faire de l'Open Data. Chaque foyer doit toutefois
-donner son accord pour que ses données alimente le flux.
-
+\subsection{La communication}
 Un autre défi majeur fut la communication.
-
 Tout au long du projet, la ville a fait un éffort de vulgarisation du projet afin de rassurer
 la population par divers moyens de communication et de modules pédagogiques. La population a accès
 a une interface pour suivre la consommation et la production d'énergie en temps réel grâce à des
 graphes simples et intuitifs afin de la sensibiliser et la rendre actrice du projet.
 
-Le projet IssyGrid inclus deux autres projets : SWAYS et SoMobility.
+Nous avons intérrogé M. Eric LEGALE, qui nous a confirmé que le projet n'a rencontré aucune opposition.
 
+Un autre aspect de ce défi fut la communication entre tous les acteurs du projet.
+Ces acteurs issus du public et du privé n'avaient en effet pas tous l'habitude de travailler
+dans un projet réunissant autant de collaborateurs et partenaires.
+
+
+\subsection{SWAYS et Galéo - Des exemples de bâtiment du tertiaire}
 SWAYS - Smart Ways to work - est un immeuble de travail de l'éco-quartier des affaires de IssyGrid.
 Tout est fait pour améliorer le confort des utilisateurs.
 Il privilégie un éclairage naturel dans les bureaux et la purification de l'air par la biophilie,
@@ -270,16 +331,30 @@ capable d'anticiper les pannes grâce à de la maintenance prédictive, assure u
 4G dans tout le complexe, et propose même aux utilisateurs des applications liées à l'activité du
 bâtiment, ainsi qu'une cyber sécurité renforcée.
 
-SoMobility est un projet dont le but est de fluidifier la circulation dans la ville. Les feux de
-signalisation sont par exemple capables de prendre des initiatives pour optimiser le trafic.
-Des applications proposent aux utilisateurs d'indiquer les places de parkings libres sur une carte.
-Il y a actuellement un mini-bus qui se déplace sans chauffeur dans la ville.
-Les données de circulation de ma ville sont encore une fois open data. Il est possible de visualiser
-le trafic en temps réel sur plusieurs sites internet.
-Au delà des ressources techniques mise en place, les habitants sont aussi sensibilisés à travailler
+M. Alexandre CAPELLE nous a parlé du bâtiment Galéo, siège de Bouygues Immobilier.
+Le fait d'instrumentaliser le bâtiment leur a permis d'améliorer progressivement le confort.
+Ils ont par exemple remarqué que la qualité de l'air se dégradait dans les salles de réunion après un certain temps.
+Et sur le plan thermique, de détecter les fuites de chaleur.
+
+\subsection{SoMobility}
+IssyGrid est un projet de SmartGrid. Son but est d'optimiser l'énergie dans la ville.
+Mais ce qu'il faut savoir, c'est que ce n'est pas le seul projet dans la ville de Issy-les-Moulineaux.
+Il y a effectivement un projet de Smart City avec le projet SoMobility, géré par un consortium composé de
+la ville, le Groupe Caisse des Dépôts, Cisco, Bouygues Immobilier, Transdev et Colas, et réunissant au total plus de 40 acteurs.
+
+Ils ont pour ambition de fluidifier la circulation dans la ville.
+Ils ont pour cela quelques idées :
+\begin{itemize}
+    \item Rendre les feux tricolores plus intelligents et capables de prendre des initiatives ;
+    \item Utiliser l'Open Data pour afficher sur des cartes le trafic en temps réel ;
+    \item Déployer des mini-bus sans chauffeur dans la ville ;
+\end{itemize}
+
+Au delà des ressources techniques mises en place, les habitants sont aussi sensibilisés à travailler
 dans des espaces de coworking avant d'aller au bureau afin de désengorger les routes et transports
 en commun, et le covoiturage est aussi mis en avant.
 
+\subsection{Bilan}
 Le bilan de IssyGrid a été présenté en juin 2019.
 Il ne présente malheureusement pas de chiffres pour ces six années de test, mais annonce en revanche
 ses objectifs pour 2020 : ``Une efficacité énergétique accrue de 20 \%, une réduction de 20 \%
@@ -292,15 +367,8 @@ Les chiffres d'IssyGrid n'ont pas été communiqués, mais un témoignage de Gir
 que l'économie générée sur la consommation énergétique serait au mieux de 60€ par an à l'échelle d'un
 foyer.
 
-\section{Interview de M. Alexandre Capelle – Embix}
-Nous avons pris contact avec M. Alexandre Capelle, Directeur des Solutions Logicielles chez Embix pour
-lui poser quelques questions sur le projet IssyGrid.
 
-Il a souhaité avant tout faire une mise en contexte :
-
-
-
-\section{Des projets en échec}
+\section{Des projets Smart Grid en échec}
 
 Lors de la VivaTech Paris 2019, Emmanuel BAVIERE (Société Générale), Erwan KERYER (KPMG)
 et Jérôme MONCEAUX (SPOON) ont pris la parole le vendredi 16 mai pour expliquer le phénomène autour des
