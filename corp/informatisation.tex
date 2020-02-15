@@ -395,48 +395,6 @@ un prix similaire à celui de 9 heure.
 La soirée est calme, les maisons se refroidissent pour la nuit. Mise à part un pic d'activité à 21 heure, expliqué par le
 pic télévisuel, l'énergie est peu chère et un nouveau cycle recommencera à minuit.
 
-% These_MELHEM_UTBM page 65
-\begin{tabular}{ | c | c | c | c | c | c | c | }
-  \hline
-  \textbf{t} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} \\
-  \textbf{€/kWh} & 0.033 & 0.027 & 0.020 & 0.017 & 0.017 & 0.029 \\
-  \hline
-  \textbf{t} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{11} & \textbf{12} \\
-  \textbf{€/kWh} & 0.033 & 0.054 & 0.215 & 0.572 & 0.572 & 0.572 \\
-  \hline
-  \textbf{t} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} & \textbf{18} \\
-  \textbf{€/kWh} & 0.215 & 0.572 & 0.286 & 0.279 & 0.086 & 0.059 \\
-  \hline
-  \textbf{t} & \textbf{19} & \textbf{20} & \textbf{21} & \textbf{22} & \textbf{23} & \textbf{24} \\
-  \textbf{€/kWh} & 0.050 & 0.061 & 0.181 & 0.077 & 0.043 & 0.037 \\
-  \hline
-\end{tabular}
-
-\begin{tikzpicture}
-  \begin{axis}[
-    title={Variation du prix d'un kWh en fonction du temps},
-    xlabel={Heure},
-    ylabel={Prix €},
-    xmin=1, xmax=24,
-    ymin=0, ymax=0.600,
-    legend pos=outer north east
-  ]
-
-  \addplot[
-    color=blue,
-    mark=square,
-    ]
-    coordinates {
-      (1, 0.033)(2, 0.027)(3, 0.020)(4, 0.017)(5, 0.017)(6, 0.029)
-      (7, 0.033)(8, 0.054)(9, 0.572)(10, 0.572)(11, 0.572)(12, 0.572)
-      (13, 0.215)(14, 0.572)(15, 0.286)(16, 0.279)(17, 0.086)(18, 0.059)
-      (19, 0.050)(20, 0.061)(21, 0.181)(22, 0.077)(23, 0.043)(24, 0.037)
-    };
-    \legend{Journée du 12 mai 2025}
-
-  \end{axis}
-\end{tikzpicture}
-
 Ces chiffres nous présentent un futur possible grâce à la smart grid, mais n'est qu'une projection dans le futur proche.
 
 On s'aperçoit que la plupart des actions quotidiennes ne sont pas si différentes qu'en 2019, et que la plupart des
@@ -445,6 +403,55 @@ optimisations restent invisibles aux consommateurs.
 La bourse en elle-même peut s'adapter à tous les niveaux de la smart grid. Le prix peut différer d'un quartier à un autre,
 d'une ville à une autre mais est lissé du fait d'un environnement similaire et un échange entre les différents milieux micro.
 
+% These_MELHEM_UTBM page 65
+\begin{figure}
+  \centering
+  \begin{tabular}{ | c | c | c | c | c | c | c | }
+    \hline
+    \textbf{t} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} \\
+    \textbf{€/kWh} & 0.033 & 0.027 & 0.020 & 0.017 & 0.017 & 0.029 \\
+    \hline
+    \textbf{t} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{11} & \textbf{12} \\
+    \textbf{€/kWh} & 0.033 & 0.054 & 0.215 & 0.572 & 0.572 & 0.572 \\
+    \hline
+    \textbf{t} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} & \textbf{18} \\
+    \textbf{€/kWh} & 0.215 & 0.572 & 0.286 & 0.279 & 0.086 & 0.059 \\
+    \hline
+    \textbf{t} & \textbf{19} & \textbf{20} & \textbf{21} & \textbf{22} & \textbf{23} & \textbf{24} \\
+    \textbf{€/kWh} & 0.050 & 0.061 & 0.181 & 0.077 & 0.043 & 0.037 \\
+    \hline
+  \end{tabular}
+
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      title={Variation du prix d'un kWh en fonction du temps},
+      xlabel={Heure},
+      ylabel={Prix €},
+      xmin=1, xmax=24,
+      ymin=0, ymax=0.600,
+      legend pos=outer north east
+    ]
+
+    \addplot[
+      color=blue,
+      mark=square,
+      ]
+      coordinates {
+        (1, 0.033)(2, 0.027)(3, 0.020)(4, 0.017)(5, 0.017)(6, 0.029)
+        (7, 0.033)(8, 0.054)(9, 0.572)(10, 0.572)(11, 0.572)(12, 0.572)
+        (13, 0.215)(14, 0.572)(15, 0.286)(16, 0.279)(17, 0.086)(18, 0.059)
+        (19, 0.050)(20, 0.061)(21, 0.181)(22, 0.077)(23, 0.043)(24, 0.037)
+      };
+      \legend{Journée du 12 mai 2025}
+
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Prix de l'électricité a l'heure - Optimization methods and energy management in ”smart grids” page 74}
+\end{figure}
+
+
+\pagebreak
 \section{Risques et vecteur d'attaques}
 
 % https://cyberguerre.numerama.com/624-peut-on-hacker-les-reseaux-electriques.html
