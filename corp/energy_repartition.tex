@@ -48,18 +48,15 @@ plus important car les distances que parcoure l'énergie est plus conséquente.
 
 En France, on utilise la norme \texttt{NF\_C18-510} pour classer les lignes électriques.
 
-
-\begin{center}
-  \begin{table}[h]
-    \begin{tabular}{|l|l|l|}
-      Tension    & Courent Alternatif     & Courent Continue \\
-      Très basse & $U_n \leq 50V$         & <COMPLETE>       \\
-      Basse      & $50V < U_n \leq 1kV$   & <COMPLETE>       \\
-      Haute      & $1kV < U_n \leq 50kV$  & <COMPLETE>       \\
-      Très Haute & $U_n > 50kV$           & <COMPLETE>       \\
-    \end{tabular}
-  \end{table}
-\end{center}
+\begin{table}[h]
+  \begin{tabular}{|l|l|l|}
+    Tension    & Courent Alternatif     & Courent Continue        \\
+    Très basse & $U_n \leq 50V$         & $U_n \leq 120V$         \\
+    Basse      & $50V < U_n \leq 1kV$   & $120V < U_n \leq 1.5kV$ \\
+    Haute      & $1kV < U_n \leq 50kV$  & $1.5kV < U_n \leq 75kV$ \\
+    Très Haute & $U_n > 50kV$           & $U_n > 75kV$            \\
+  \end{tabular}
+\end{table}
 
 Chacune de ces tensions sont utilisées pour des besoins spécifiques.
 
@@ -193,27 +190,43 @@ Sujet à
 \begin{subequations}
   \begin{equation} \label{prosumer_2}
     \sum_{i \in N} (a_{ij} + x_{ij}) \ge 1
+    \quad \quad
+    j \in C
   \end{equation}
   \begin{equation} \label{prosumer_3}
     \sum_{i \in N} (a_{ij} + x_{ij}) \ge 1
+    \quad \quad
+    j \in P
   \end{equation}
   \begin{equation} \label{prosumer_4}
     \sum_{i \in N} (a_{ij} + x_{ij}) \ge 1
+    \quad \quad
+    j \in P
   \end{equation}
   \begin{equation} \label{prosumer_5}
     \sum_{i \in N} y^t_{ij} + (1 + L) Q^t_j = \sum_{i \in N} y^t_{ij}
+    \quad \quad
+    j \in N, t \in T
   \end{equation}
   \begin{equation} \label{prosumer_6}
     y^t_{ij} \le \bar{Q}(a_{ij} + x_{ij})
+    \quad \quad
+    (i, j) \in A
   \end{equation}
   \begin{equation} \label{prosumer_7}
     a_{ij} + x_{ij} + a_{ji} + x_{ji} \le 1
+    \quad \quad
+    i, j \in N
   \end{equation}
   \begin{equation} \label{prosumer_8}
     x_{ij} \in \lbrace 0, 1 \rbrace
+    \quad \quad
+    (i,j) \in A
   \end{equation}
   \begin{equation} \label{prosumer_9}
     y^t_{ij} \ge 0
+    \quad \quad
+    (i,j) \in A, i \in T
   \end{equation}
 \end{subequations}
 
